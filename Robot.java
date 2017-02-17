@@ -93,48 +93,48 @@ public class Robot extends IterativeRobot {
 	
 
 
-	final String defaultAuto = "Default";
+		final String defaultAuto = "Default";
 
 
-   //final String RoughTerrainAuto = "RoughTerrainAuto"; initializing the button
+		//final String RoughTerrainAuto = "RoughTerrainAuto"; initializing the button
 
-   Ultrasonic ultra = new Ultrasonic(0,1);
-
-
-  
-
-
-   //final String resetEncoder = "resetEncoder";
-
-
-   //final String liveEncoder = "liveEncoder" ;
+		Ultrasonic ultra = new Ultrasonic(0,1);
 
 
   
 
 
-   String autoSelected;
+		//final String resetEncoder = "resetEncoder";
 
 
-   //String autoSelectedButton;
+		//final String liveEncoder = "liveEncoder" ;
 
 
-   SendableChooser<String> chooser;
+  
 
 
-   SendableChooser<String> button;
+		String autoSelected;
 
 
-   CANTalon _frontLeftMotor = new CANTalon(0); 		/* device IDs here (1 of 2) */
+		//String autoSelectedButton;
 
 
-	CANTalon _rearLeftMotor = new CANTalon(1);
+		SendableChooser<String> chooser;
 
 
-	CANTalon _frontRightMotor = new CANTalon(2);
+		SendableChooser<String> button;
 
 
-	CANTalon _rearRightMotor = new CANTalon(3);
+		CANTalon _frontLeftMotor = new CANTalon(0); 		/* device IDs here (1 of 2) */
+
+
+		CANTalon _rearLeftMotor = new CANTalon(1);
+
+
+		CANTalon _frontRightMotor = new CANTalon(2);
+
+
+		CANTalon _rearRightMotor = new CANTalon(3);
 
 
 	//CameraServer.StartAutomaticCapture();
@@ -143,52 +143,52 @@ public class Robot extends IterativeRobot {
 	/* extra talons for six motor drives */
 
 
-	CANTalon _intake = new CANTalon(15);
+		CANTalon _intake = new CANTalon(15);
 
 
-	CANTalon _tomohawk = new CANTalon(14);
-
-
-	
+		CANTalon _tomohawk = new CANTalon(14);
 
 
 	
 
 
-	RobotDrive _drive = new RobotDrive(_frontLeftMotor, _rearLeftMotor, _frontRightMotor, _rearRightMotor);
+	
+
+
+		RobotDrive _drive = new RobotDrive(_frontLeftMotor, _rearLeftMotor, _frontRightMotor, _rearRightMotor);
 
 
 	
 
 
-	Joystick _joy = new Joystick(0);
+		Joystick _joy = new Joystick(0);
 
 
-	Joystick _joy2 = new Joystick(1);
+		Joystick _joy2 = new Joystick(1);
 
 
-	Joystick _xBoxController = new Joystick(2);
+		Joystick _xBoxController = new Joystick(2);
 
 
-	CameraServer server = CameraServer.getInstance();
+		CameraServer server = CameraServer.getInstance();
 
 
-	//server.setQuality(50);
+		//server.setQuality(50);
 
 
-//	stry.startAutomaticCapture();
+		//	stry.startAutomaticCapture();
 
 
 	
 
 
-	// Autonomous Variables
+		// Autonomous Variables
 
 
-	int autoCounter = 0;
+		int autoCounter = 0;
 
 
-	int autoState = 0;
+		int autoState = 0;
 
 
 	
@@ -227,13 +227,13 @@ public class Robot extends IterativeRobot {
        //_leftSlave.changeControlMode(TalonControlMode.Follower);
 
 
-   	//_rightSlave.changeControlMode(TalonControlMode.Follower);
+       //_rightSlave.changeControlMode(TalonControlMode.Follower);
 
 
-   	//_leftSlave.set(11); 							/* device IDs here (2 of 2) */
+       //_leftSlave.set(11); 							/* device IDs here (2 of 2) */
+       
 
-
-   	//_rightSlave.set(14);
+       //_rightSlave.set(14);
 
 
       
@@ -257,20 +257,20 @@ public class Robot extends IterativeRobot {
    	*/
 
 
-   	server.startAutomaticCapture();
+   		server.startAutomaticCapture();
 
 
    	
 
 
-   	//Sensor automatic capturing
+   		//Sensor automatic capturing
 
 
-   	ultra.setEnabled(true);
+   		ultra.setEnabled(true);
 
 
-   	ultra.setAutomaticMode(true);
-
+   		ultra.setAutomaticMode(true);
+   	
 
    	
 
@@ -284,10 +284,10 @@ public class Robot extends IterativeRobot {
    	 * Since _leftSlave just follows frontLeftMotor, no need to invert it anywhere. */
 
 
-   	_drive.setInvertedMotor(MotorType.kFrontLeft, true);
+   		_drive.setInvertedMotor(MotorType.kFrontLeft, true);
 
 
-   	_drive.setInvertedMotor(MotorType.kRearLeft, true);
+   		_drive.setInvertedMotor(MotorType.kRearLeft, true);
 
 
 
@@ -331,16 +331,16 @@ public class Robot extends IterativeRobot {
    public void autonomousInit() {
 
 
-   	autoCounter = 0;
+	   autoCounter = 0;
 
 
-   	autoState = 0;
+	   autoState = 0;
 
 
    	
 
 
-   	autoSelected = (String) chooser.getSelected();
+   		autoSelected = (String) chooser.getSelected();
 
 
    	
